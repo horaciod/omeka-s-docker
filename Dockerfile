@@ -19,7 +19,7 @@ RUN apt-get -qq update && apt-get -qq -y --no-install-recommends install \
 RUN docker-php-ext-install -j$(nproc) iconv  \
     pdo pdo_mysql mysqli gd
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ 
-RUN docker-php-ext-install -j$(nproc) gd
+
 RUN curl -J -L -s -k \
     'https://github.com/omeka/omeka-s/releases/download/v3.2.0/omeka-s-3.2.0.zip' \
     -o /var/www/omeka-s.zip \
